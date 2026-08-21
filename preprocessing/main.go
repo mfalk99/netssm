@@ -219,9 +219,6 @@ func tagPcapData(labels dataframe.DataFrame, pcapfile string, input string, labe
   if label != "" {
     raw_label = label
   } else {
-    if strings.Contains(pcapfile, "/") {
-      pcapfile = filepath.Base(pcapfile)
-    }
     index, err := findIndex(labels, "File", pcapfile)
     if err != nil {
       log.Println(err)
